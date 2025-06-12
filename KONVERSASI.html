@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KebunRaya - Home</title>
+    <link rel="stylesheet" href="css.css">
+
+    <script>
+    function searchPlants() {
+        const input = document.getElementById('searchInput').value.toLowerCase();
+        const items = document.querySelectorAll('.plant-item');
+
+        items.forEach(item => {
+            const name = item.getAttribute('data-name');
+            if (name.includes(input)) {
+                item.style.display = "block";
+            } else {
+                item.style.display = "none";
+            }
+        });
+    }
+    </script>
+
+
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <span>KEBUN</span>
+            <span>KITA</span>
+        </div>
+        
+        <div class="nav">
+            <a href="index.html">BERANDA</a>
+            <div class="dropdown">
+                <div class="dropdown-toggle">KABAR KEBUN</div>
+                <div class="dropdown-menu">
+                    <a href="KABAR_TUMBUHAN.html">KABAR TUMBUHAN</a>
+                    <a href="KONVERSASI.html" class="active">KONSERVASI</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <div class="dropdown-toggle">WISATA </div>
+                <div class="dropdown-menu">
+                    <a href="LOKASI.html">LOKASI MENARIK</a>
+                    <a href="MERCH.html">MERCHANDISE</a>
+                </div>
+            </div>
+            <a href="TENTANG_KAMI.html  ">TENTANG KAMI</a>
+        </div>
+        
+        <button class="ticket-button">BELI TIKET</button>
+    </div>
+    
+    <div class="search-container">
+        <div class="search-title">Cari Tumbuhan</div>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Cari">
+                <button onclick="searchPlants()">Search</button>
+            </div>
+    </div>
+    
+    <div class="plant-gallery" id="plantGallery">
+        <div class="plant-item" data-name="anggrek">
+            <img src="tanaman1.jpg" alt="Anggrek">
+            <p>Anggrek</p>
+        </div>
+        <div class="plant-item" data-name="mawar">
+            <img src="tanaman2.jpg" alt="Mawar">
+            <p>Mawar</p>
+        </div>
+        <div class="plant-item" data-name="melati">
+            <img src="tanaman3.jpg" alt="Melati">
+            <p>Melati</p>
+        </div>
+        <div class="plant-item" data-name="kaktus">
+            <img src="tanaman4.jpg" alt="Kaktus">
+            <p>Kaktus</p>
+        </div>
+    </div>
+
+
+    <div class="footer">
+    </div>
+</body>
+</html>
