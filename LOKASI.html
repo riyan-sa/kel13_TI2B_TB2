@@ -3,25 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KebunRaya - Home</title>
+    <title>KebunRaya - Lokasi</title>
     <link rel="stylesheet" href="css.css">
 </head>
 <body>
     <div class="header">
         <div class="logo">
             <span>KEBUN</span>
-            <span>KITA</span>
+            <span>RAYA</span>
         </div>
-        
-        <div class="nav">
-            <a href="index.html">BERANDA</a>
-            <div class="dropdown">
-                <div class="dropdown-toggle">KABAR KEBUN</div>
-                <div class="dropdown-menu">
-                    <a href="KABAR_TUMBUHAN.html">KABAR TUMBUHAN</a>
-                    <a href="KONVERSASI.html">KONSERVASI</a>
-                </div>
+        <div class="nav-container">
+            <div class="burger" id="burger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
             </div>
+        </div>
+        <div class="nav" id="navMenu">
+            <a href="index.html">BERANDA</a>
+
+            <a href="KONVERSASI.html">KONSERVASI</a>
+            
             <div class="dropdown">
                 <div class="dropdown-toggle">WISATA </div>
                 <div class="dropdown-menu">
@@ -31,13 +33,36 @@
             </div>
             <a href="TENTANG_KAMI.html  ">TENTANG KAMI</a>
         </div>
-        
-        <button class="ticket-button">BELI TIKET</button>
+    </div>    
+
+    <div class="content-section">
+        <h2>Lokasi Menarik di Kebun Raya</h2>
+        <p>Kunjungi spot-spot terbaik untuk berfoto, belajar, dan menikmati alam.</p>
+
+        <div class="location-grid">
+            <div class="location-item">
+                <img src="img/Kolam air mancur.jpeg" alt="air mancur">
+                <h3>Air Mancur</h3>
+                <p>Area bersuafoto aesthetic</p>
+            </div>
+            <div class="location-item">
+                <img src="img/taman edukasi.jpeg" alt="Taman Edukasi">
+                <h3>Taman Edukasi Anak</h3>
+                <p>Area interaktif untuk belajar tentang tumbuhan.</p>
+            </div>
+            <div class="location-item">
+                <img src="img/jembatan bambu.jpeg" alt="Jembatan Bambu">
+                <h3>Jembatan Bambu</h3>
+                <p>Jalan setapak menyusuri koleksi pohon endemik.</p>
+            </div>
+        </div>
     </div>
-    
 
     
+    <script src="js.js"></script>
+
     <div class="footer">
+         <p>&copy; 2025 Kebun Raya | Email: info@kebunRaya.id | Instagram: @kebunRaya</p>
     </div>
 </body>
 </html>

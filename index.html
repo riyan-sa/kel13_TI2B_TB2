@@ -1,53 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KebunRaya - Home</title>
-    <link rel="stylesheet" href="css.css">
-    <style>
-        h1 {
-            font-size: 50px;
-            color: #4Caf50;
-        }
-
-    </style>
-</head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>kebunRaya - Home</title>
+  <link rel="stylesheet" href="css.css"/></head>
 <body>
-    <div class="header">
-        <div class="logo">
-            <span>KEBUN</span>
-            <span>KITA</span>
-        </div>
-        
-        <div class="nav">
-            <a href="index.html" class="active">BERANDA</a>
-            <div class="dropdown">
-                <div class="dropdown-toggle">KABAR KEBUN</div>
-                <div class="dropdown-menu">
-                    <a href="KABAR_TUMBUHAN.html">KABAR TUMBUHAN</a>
-                    <a href="KONVERSASI.html">KONSERVASI</a>
-                </div>
-            </div>
-            <div class="dropdown">
-                <div class="dropdown-toggle">WISATA </div>
-                <div class="dropdown-menu">
-                    <a href="LOKASI.html">LOKASI MENARIK</a>
-                    <a href="MERCH.html">MERCHANDISE</a>
-                </div>
-            </div>
-                <a href="TENTANG_KAMI.html  ">TENTANG KAMI</a>
-        </div>
-        
-        <button class="ticket-button">BELI TIKET</button>
-    </div>
-        
-    <div style="text-align: center;">
-        <h1>Kebun Kita</h1>
-        <p>Temukan berbagai informasi menarik tentang tumbuhan, konservasi, dan lokasi wisata menarik di kebun kita.</p>
+
+  <div class="header">
+    <div class="logo">
+      <span>KEBUN</span>
+      <span>Raya</span>
     </div>
 
-    <div class="footer">
+    <div class="nav-container">
+      <div class="burger" id="burger">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <div class="nav" id="navMenu">
+        <a href="index.html" class="active">BERANDA</a>
+        
+        <a href="KONVERSASI.html">KONSERVASI</a>
+
+        <div class="dropdown">
+          <div class="dropdown-toggle">WISATA</div>
+          <div class="dropdown-menu">
+            <a href="LOKASI.html">LOKASI MENARIK</a>
+            <a href="MERCH.html">MERCHANDISE</a>
+          </div>
+        </div>
+        
+        <a href="TENTANG_KAMI.html">TENTANG KAMI</a>
+      </div>
     </div>
+  </div>
+
+  <div class="video-hero">
+  <video autoplay muted loop id="bgVideo">
+    <source src="vid/background.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  
+  <div class="welcome-text">
+    <h1>Selamat Datang di Kebun Raya</h1>
+  </div>
+  </div>
+
+  <div class="content-section">
+    <h2>Mengapa Memilih Kebun Raya?</h2>
+    <p>Kami menghadirkan pengalaman berkunjung ke kebun raya yang menyenangkan sekaligus edukatif, cocok untuk semua usia.</p>
+  </div>
+  <div class="content-section">
+    <h2>Tentang Kebun Raya</h2>
+    <p>Kebun Raya adalah destinasi wisata alam yang memadukan konservasi tanaman dengan edukasi lingkungan. Pengunjung dapat menjelajahi berbagai spesies tumbuhan endemik, menikmati pemandangan alami, serta belajar mengenai pentingnya menjaga keseimbangan ekosistem. Tempat ini didirikan dengan semangat pelestarian dan kecintaan terhadap alam Indonesia.</p>
+  </div>
+
+  <div class="footer">
+    <p>&copy; 2025 Kebun Raya | Email: info@kebunRaya.id | Instagram: @kebunRaya</p>
+  </div>
+
+  <script src="js.js"></script>
 </body>
 </html>

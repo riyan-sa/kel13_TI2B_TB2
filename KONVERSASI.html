@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KebunRaya - Home</title>
+    <title>KebunRaya - konservasi</title>
     <link rel="stylesheet" href="css.css">
 
     <script>
@@ -28,60 +28,96 @@
     <div class="header">
         <div class="logo">
             <span>KEBUN</span>
-            <span>KITA</span>
+            <span>RAYA</span>
+        </div>
+            
+        <div class="nav-container">
+            <div class="burger" id="burger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <div class="nav" id="navMenu">
+                <a href="index.html">BERANDA</a>
+                
+                <a href="KONVERSASI.html" class="active">KONSERVASI</a>
+                
+                <div class="dropdown">
+                    <div class="dropdown-toggle">WISATA</div>
+                    <div class="dropdown-menu">
+                        <a href="LOKASI.html">LOKASI MENARIK</a>
+                        <a href="MERCH.html">MERCHANDISE</a>
+                    </div>
+                </div>
+                
+                <a href="TENTANG_KAMI.html">TENTANG KAMI</a>
+            </div>
+        </div>
+    </div>    
+        
+        <div class="search-container">
+            <div class="search-title">Cari Tumbuhan</div>
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Cari">
+                    <button onclick="searchPlants()">Search</button>
+                </div>
         </div>
         
-        <div class="nav">
-            <a href="index.html">BERANDA</a>
-            <div class="dropdown">
-                <div class="dropdown-toggle">KABAR KEBUN</div>
-                <div class="dropdown-menu">
-                    <a href="KABAR_TUMBUHAN.html">KABAR TUMBUHAN</a>
-                    <a href="KONVERSASI.html" class="active">KONSERVASI</a>
-                </div>
+        <div class="plant-gallery" id="plantGallery">
+            <div class="plant-item" data-name="bunga anggrek">
+                <img src="img/anggrek bulan.jpg" alt="Anggrek">
+                <p>Anggrek Bulan</p>
             </div>
-            <div class="dropdown">
-                <div class="dropdown-toggle">WISATA </div>
-                <div class="dropdown-menu">
-                    <a href="LOKASI.html">LOKASI MENARIK</a>
-                    <a href="MERCH.html">MERCHANDISE</a>
-                </div>
+            <div class="plant-item" data-name="bunga anggrek hitam">
+                <img src="img/anggrek hitam.jpg" alt="Anggrek">
+                <p>Anggrek Hitam</p>
             </div>
-            <a href="TENTANG_KAMI.html  ">TENTANG KAMI</a>
-        </div>
-        
-        <button class="ticket-button">BELI TIKET</button>
-    </div>
-    
-    <div class="search-container">
-        <div class="search-title">Cari Tumbuhan</div>
-            <div class="search-box">
-                <input type="text" id="searchInput" placeholder="Cari">
-                <button onclick="searchPlants()">Search</button>
+            <div class="plant-item" data-name="bunga kertas">
+                <img src="img/bunga kertas.jpg" alt="Bunga Kertas">
+                <p>Bunga Kertas</p>
             </div>
-    </div>
-    
-    <div class="plant-gallery" id="plantGallery">
-        <div class="plant-item" data-name="anggrek">
-            <img src="tanaman1.jpg" alt="Anggrek">
-            <p>Anggrek</p>
+            <div class="plant-item" data-name="bunga edelwise">
+                <img src="img/Edelweiss Jawa _ Javanese Edelweiss.jpg" alt="Edelweiss">
+                <p>Edelweiss</p>
+            </div>
+            <div class="plant-item" data-name="janda">
+                <img src="img/janda bolong.jpg" alt="Janda Bolong">
+                <p>Janda Bolong</p>
+            </div>
+            <div class="plant-item" data-name="kantong semar">
+                <img src="img/kantong semar.jpg" alt="Kantong Semar">
+                <p>Kantong Semar</p>
+            </div>
+            <div class="plant-item" data-name="pohon rasamala">
+                <img src="img/Kayu Rasamala.jpg" alt="Pohon Rasamala">
+                <p>Pohon Rasamala</p>
+            </div>
+            <div class="plant-item" data-name="pohon kiara">
+                <img src="img/Kiara Tree.jpg" alt="Pohon Kiara">
+                <p>Pohon Rasamala</p>
+            </div>
+            <div class="plant-item" data-name="lidah mertua">
+                <img src="img/lidah mertua.jpg" alt="Lidah mertua">
+                <p>Lidah Mertua</p>
+            </div>
+            <div class="plant-item" data-name="pakis haji">
+                <img src="img/pakis haji.jpg" alt="Pakis Haji">
+                <p>Pakis Haji</p>
+            </div>
+            <div class="plant-item" data-name="bunga bangkai" data-name="raflesia arnoldi">
+                <img src="img/Rafflesia arnoldii.jpg" alt="Bunga Bangkai">
+                <p>Bunga Bangkai</p>
+            </div>
+            <div class="plant-item" data-name="suplir">
+                <img src="img/suplir.jpg" alt="suplir">
+                <p>Suplir</p>
+            </div>
         </div>
-        <div class="plant-item" data-name="mawar">
-            <img src="tanaman2.jpg" alt="Mawar">
-            <p>Mawar</p>
-        </div>
-        <div class="plant-item" data-name="melati">
-            <img src="tanaman3.jpg" alt="Melati">
-            <p>Melati</p>
-        </div>
-        <div class="plant-item" data-name="kaktus">
-            <img src="tanaman4.jpg" alt="Kaktus">
-            <p>Kaktus</p>
-        </div>
-    </div>
 
+        <script src="js.js"></script>
 
-    <div class="footer">
-    </div>
+        <div class="footer">
+             <p>&copy; 2025 Kebun Raya | Email: info@kebunRaya.id | Instagram: @kebunRaya</p>
+        </div>
 </body>
 </html>

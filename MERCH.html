@@ -1,41 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KebunRaya - Home</title>
-    <link rel="stylesheet" href="css.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KebunRaya - Merchandise</title>
+  <link rel="stylesheet" href="css.css">
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <style>
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .cart-summary {
+      margin-top: 30px;
+      padding: 16px;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .checkout-button {
+      margin-top: 16px;
+      background-color: #2196F3;
+    }
+
+    .checkout-button:hover {
+      background-color: #0b7dda;
+    }
+  </style>
 </head>
 <body>
-    <div class="header">
-        <div class="logo">
-            <span>KEBUN</span>
-            <span>KITA</span>
-        </div>
-        
-        <div class="nav">
-            <a href="index.html">BERANDA</a>
-            <div class="dropdown">
-                <div class="dropdown-toggle">KABAR KEBUN</div>
-                <div class="dropdown-menu">
-                    <a href="KABAR_TUMBUHAN.html">KABAR TUMBUHAN</a>
-                    <a href="KONVERSASI.html">KONSERVASI</a>
-                </div>
-            </div>
-            <div class="dropdown">
-                <div class="dropdown-toggle">WISATA </div>
-                <div class="dropdown-menu">
-                    <a href="LOKASI.html" >LOKASI MENARIK</a>
-                    <a href="MERCH.html" class="active">MERCHANDISE</a>
-                </div>
-            </div>
-            <a href="TENTANG_KAMI.html  ">TENTANG KAMI</a>
-        </div>
-        
-        <button class="ticket-button">BELI TIKET</button>
+  <div class="header">
+    <div class="logo">
+      <span>KEBUN</span>
+      <span>RAYA</span>
     </div>
-        
-    <div class="footer">
+    <div class="nav-container">
+      <div class="burger" id="burger">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
     </div>
+    <div class="nav" id="navMenu">
+      <a href="index.html">BERANDA</a>
+      <a href="KONVERSASI.html">KONSERVASI</a>
+      <div class="dropdown">
+        <div class="dropdown-toggle">WISATA</div>
+        <div class="dropdown-menu">
+          <a href="LOKASI.html">LOKASI MENARIK</a>
+          <a href="MERCH.html" class="active">MERCHANDISE</a>
+        </div>
+      </div>
+      <a href="TENTANG_KAMI.html">TENTANG KAMI</a>
+    </div>
+  </div>
+
+  <div class="content-section">
+    <h2>Produk Resmi Kebun Raya</h2>
+    <p>Temukan berbagai merchandise eksklusif dari Kebun Kita yang ramah lingkungan dan cocok untuk oleh-oleh.</p>
+
+    <!-- React App -->
+    <div id="merchApp"></div>
+  </div>
+
+  <script type="text/babel">
+    const products = [
+      { id: 1, name: "Kaos Kebun Raya", price: 80000, image: "img/baju.jpg" },
+      { id: 2, name: "Totebag Ramah Lingkungan", price: 45000, image: "img/totebag.jpg" },
+      { id: 3, name: "Tumbler Stainless", price: 65000, image: "img/tumbler.jpg" }
+    ];
+
+    function MerchItem({ product, onAdd }) {
+      return (
+        <div className="product-item">
+          <img src={product.image} alt={product.name} />
+          <h3>{product.name}</h3>
+          <p>Rp {product.price.toLocaleString()}</p>
+          <button onClick={() => onAdd(product)}>Beli</button>
+        </div>
+      );
+    }
+
+    function CartSummary({ cart, onCheckout }) {
+      const totalItems = cart.length;
+      const totalPrice = cart.reduce((sum, item) => sum + item.price, 0);
+
+      return (
+        <div className="cart-summary">
+          <h3>Keranjang Belanja</h3>
+          {cart.length === 0 ? (
+            <p>Belum ada barang di keranjang.</p>
+          ) : (
+            <div>
+              {cart.map((item, index) => (
+                <div className="cart-item" key={index}>
+                  <span>{item.name}</span>
+                  <span>Rp {item.price.toLocaleString()}</span>
+                </div>
+              ))}
+              <hr />
+              <p><strong>Total Barang:</strong> {totalItems}</p>
+              <p><strong>Total Harga:</strong> Rp {totalPrice.toLocaleString()}</p>
+              <button className="checkout-button" onClick={onCheckout}>Checkout</button>
+            </div>
+          )}
+        </div>
+      );
+    }
+
+    function MerchApp() {
+      const [cart, setCart] = React.useState([]);
+
+      const handleAddToCart = (product) => {
+        setCart([...cart, product]);
+        alert(`${product.name} ditambahkan ke keranjang!`);
+      };
+
+      const handleCheckout = () => {
+        if (cart.length === 0) {
+          alert("Keranjang kosong! Silakan tambahkan barang terlebih dahulu.");
+        } else {
+          alert("Terima kasih telah berbelanja di Kebun Kita!");
+          setCart([]); // Kosongkan keranjang
+        }
+      };
+
+      return (
+        <div>
+          <div className="product-grid">
+            {products.map(product => (
+              <MerchItem key={product.id} product={product} onAdd={handleAddToCart} />
+            ))}
+          </div>
+          <CartSummary cart={cart} onCheckout={handleCheckout} />
+        </div>
+      );
+    }
+
+    ReactDOM.render(<MerchApp />, document.getElementById('merchApp'));
+  </script>
+
+  <script src="js.js"></script>
+
+  <div class="footer">
+    <p>&copy; 2025 Kebun Raya | Email: info@kebunRaya.id | Instagram: @kebunRaya</p>
+  </div>
 </body>
 </html>

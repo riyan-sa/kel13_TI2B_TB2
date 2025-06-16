@@ -3,40 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KebunRaya - Home</title>
+    <title>KebunRaya - Tentang Kami</title>
     <link rel="stylesheet" href="css.css">
 </head>
 <body>
     <div class="header">
         <div class="logo">
             <span>KEBUN</span>
-            <span>KITA</span>
+            <span>RAYA</span>
         </div>
         
-        <div class="nav">
+        <div class="nav-container">
+        <div class="burger" id="burger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <div class="nav" id="navMenu">
             <a href="index.html">BERANDA</a>
+            
+            <a href="KONVERSASI.html">KONSERVASI</a>
+            
             <div class="dropdown">
-                <div class="dropdown-toggle">KABAR KEBUN</div>
-                <div class="dropdown-menu">
-                    <a href="KABAR_TUMBUHAN.html">KABAR TUMBUHAN</a>
-                    <a href="KONVERSASI.html">KONSERVASI</a>
-                </div>
-            </div>
-            <div class="dropdown">
-                <div class="dropdown-toggle">WISATA </div>
+                <div class="dropdown-toggle">WISATA</div>
                 <div class="dropdown-menu">
                     <a href="LOKASI.html">LOKASI MENARIK</a>
                     <a href="MERCH.html">MERCHANDISE</a>
                 </div>
             </div>
-            <a href="TENTANG_KAMI.html" class="active">TENTANG KAMI</a>
+            
+                <a href="TENTANG_KAMI.html" class="active">TENTANG KAMI</a>
+            </div>
         </div>
-        
-        <button class="ticket-button">BELI TIKET</button>
     </div>
+
+    <div class="content-section">
+        <h2>Tentang Kebun Raya</h2>
+        <p>Kebun Raya adalah ruang konservasi dan edukasi yang berfokus pada pelestarian flora Indonesia. Kami percaya bahwa alam adalah guru terbaik.</p>
+
+        <h3>Visi</h3>
+        <p>Menjadi pusat konservasi tumbuhan tropis yang mendidik dan menginspirasi masyarakat.</p>
+
+        <h3>Misi</h3>
+        <ul>
+            <li>Melestarikan spesies tumbuhan langka dan endemik.</li>
+            <li>Menyediakan ruang edukasi untuk semua kalangan.</li>
+            <li>Mendorong gaya hidup berkelanjutan dan cinta alam.</li>
+        </ul>
+    </div>
+
     
-    
+    <script src="js.js"></script>
+
     <div class="footer">
+         <p>&copy; 2025 Kebun Raya | Email: info@kebunRaya.id | Instagram: @kebunRaya</p> 
     </div>
 </body>
 </html>
